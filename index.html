@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>David Ribeiro | Landing Pages</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+
+   @keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  }
+  @keyframes float-delay {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(25px) rotate(-2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  }
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+  .animate-float-delay {
+    animation: float-delay 10s ease-in-out infinite;
+  }
+  .animate-fade-in-down {
+    animation: fade-in-down 0.8s ease-out both;
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out both;
+  }
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+  @keyframes fade-in-down {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+
+
+  </style>
+</head>
+<body class="antialiased">
+  
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm supports-[backdrop-filter]:bg-white/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
+        <!-- Logo + nome com microinterações melhoradas -->
+      <a href="#inicio" class="flex items-center space-x-3 sm:space-x-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-yellow-500 rounded-lg transition-all hover:scale-[1.02] active:scale-95 group">
+    <img 
+        src="img/logo.png" 
+        alt="Logo David Ribeiro - Designer de Landing Pages" 
+        class="h-10 w-10 sm:h-12 sm:w-12 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110" 
+        width="48" 
+        height="48"
+        loading="eager"
+        decoding="sync"
+    >
+    <div class="transition-all duration-300 group-hover:translate-x-1">
+        <span class="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">
+            David Ribeiro
+        </span>
+        <p class="text-xs sm:text-sm text-gray-600 font-medium mt-0.5 transition-colors duration-300 group-hover:text-gray-800">
+            Landing Pages Modernas & Eficientes
+        </p>
+    </div>
+</a>
+
+        <!-- Navegação desktop com indicador de scroll -->
+        <nav class="hidden md:block" aria-label="Navegação principal">
+            <ul class="flex items-center space-x-5 lg:space-x-7">
+                <li>
+                    <a href="#sobre" class="relative text-base font-semibold text-gray-800 hover:text-yellow-600 transition-colors px-2 py-1.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 focus-visible:rounded-lg">
+                        Sobre
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#servicos" class="relative text-base font-semibold text-gray-800 hover:text-yellow-600 transition-colors px-2 py-1.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 focus-visible:rounded-lg">
+                        Serviços
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#portfolio" class="relative text-base font-semibold text-gray-800 hover:text-yellow-600 transition-colors px-2 py-1.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 focus-visible:rounded-lg">
+                        Portfólio
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contato" class="relative text-base font-semibold text-gray-800 hover:text-yellow-600 transition-colors px-2 py-1.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 focus-visible:rounded-lg">
+                        Contato
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Botão CTA desktop com gradiente e hover melhorado -->
+        <div class="hidden md:block">
+            <a href="#contato" class="relative overflow-hidden bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-semibold px-6 py-2.5 rounded-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 focus-visible:ring-offset-2 group">
+                <span class="relative z-10">Solicitar Orçamento</span>
+                <span class="absolute inset-0 bg-gradient-to-r from-yellow-600 to-yellow-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></span>
+            </a>
+        </div>
+
+        <!-- Botão mobile com animação suave -->
+       <button 
+    id="btn-mobile-menu" 
+    class="md:hidden focus:outline-none p-2 rounded-full transition-colors hover:bg-yellow-50 focus-visible:ring-2 focus-visible:ring-yellow-500" 
+    aria-label="Abrir/Fechar menu mobile" 
+    aria-expanded="false" 
+    aria-controls="dropdown-menu"
+>
+    <svg id="icon-menu" class="w-8 h-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+    <svg id="icon-close" class="w-8 h-8 text-gray-800 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+    </svg>
+</button>
+    </div>
+
+  <!-- Menu mobile com animação controlada por JavaScript -->
+ <nav id="dropdown-menu" class="bg-white shadow-xl md:hidden hidden absolute inset-x-0 top-full transition-all duration-300 ease-out" aria-label="Navegação mobile">
+        <div class="flex flex-col px-4 py-3 space-y-1 border-t border-gray-100">
+        <a href="#sobre" class="py-3 px-4 text-gray-800 font-medium hover:text-yellow-600 hover:bg-yellow-50 transition-all rounded-lg flex items-center">
+            <svg class="w-5 h-5 mr-3 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+            </svg>
+            Sobre
+        </a>
+        <a href="#servicos" class="py-3 px-4 text-gray-800 font-medium hover:text-yellow-600 hover:bg-yellow-50 transition-all rounded-lg flex items-center">
+            <svg class="w-5 h-5 mr-3 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+            Serviços
+        </a>
+        <a href="#portfolio" class="py-3 px-4 text-gray-800 font-medium hover:text-yellow-600 hover:bg-yellow-50 transition-all rounded-lg flex items-center">
+            <svg class="w-5 h-5 mr-3 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+            </svg>
+            Portfólio
+        </a>
+        <a href="#contato" class="py-3 px-4 text-gray-800 font-medium hover:text-yellow-600 hover:bg-yellow-50 transition-all rounded-lg flex items-center">
+            <svg class="w-5 h-5 mr-3 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            Contato
+        </a>
+        <a href="#contato" class="mt-2 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-5 py-3 rounded-full text-center font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            Solicitar Orçamento
+        </a>
+    </div>
+</nav>
+</header>
+  <!-- Hero -->
+ <!-- Hero -->
+<section class="relative bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-300 py-20 md:py-28 lg:py-36 overflow-hidden">
+  <!-- Elementos decorativos -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="float-ball1 absolute top-0 left-0 w-64 h-64 bg-yellow-600 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
+    <div class="float-ball2 absolute bottom-0 right-0 w-72 h-72 bg-yellow-700 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
+    <div class="pulse-circle absolute top-1/4 right-1/4 w-32 h-32 bg-white rounded-full opacity-10"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 text-center">
+    <!-- Badge -->
+    <div class="badge inline-flex items-center bg-white/30 backdrop-blur-md rounded-full px-6 py-3 mb-8 shadow-sm">
+      <svg class="w-5 h-5 mr-2 text-yellow-900" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 015.466 0l.476.953a1 1 0 00.753.547l1.053.153a3.066 3.066 0 011.698 5.233l-.76.74a1 1 0 00-.287.885l.18 1.047a3.066 3.066 0 01-4.453 3.226l-.944-.497a1 1 0 00-.932 0l-.944.497a3.066 3.066 0 01-4.453-3.226l.18-1.047a1 1 0 00-.287-.885l-.76-.74a3.066 3.066 0 011.698-5.233l1.053-.153a1 1 0 00.753-.547l.476-.953z" clip-rule="evenodd" />
+      </svg>
+      <span class="text-sm font-bold tracking-wider text-yellow-900 uppercase">+150 projetos entregues</span>
+    </div>
+
+    <!-- Título -->
+    <h1 class="title text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-gray-900 mb-8 leading-tight">
+      <span class="block">Transforme visitantes em</span>
+      <span class="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-800 to-yellow-600 drop-shadow-lg">clientes lucrativos</span>
+    </h1>
+
+    <!-- Subtítulo -->
+    <div class="max-w-2xl mx-auto">
+      <p class="subtitle text-xl md:text-2xl text-yellow-900 mb-10 leading-relaxed font-medium">
+        Landing Pages <span class="font-bold underline decoration-yellow-700 decoration-2 underline-offset-4">conversoras</span> desenvolvidas com técnicas comprovadas de UX/UI e psicologia de vendas para <span class="font-bold">maximizar seus resultados</span>.
+      </p>
+
+      <!-- Botões -->
+     <!-- Botões -->
+  <div class="buttons flex flex-col sm:flex-row justify-center gap-5">
+  <a href="#contato" class="btn-1 inline-flex items-center justify-center px-10 py-5 bg-gray-900 hover:bg-gray-800 text-white font-bold rounded-full transition-all duration-300 shadow-xl group">
+    <span class="mr-3">Solicitar Orçamento</span>
+    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+    </svg>
+  </a>
+  
+  <a href="#portfolio" class="btn-2 inline-flex items-center justify-center px-10 py-5 bg-white/90 hover:bg-white text-gray-900 font-bold rounded-full border-2 border-yellow-500/20 group">
+    <span class="mr-3">Ver Portfólio</span>
+    <svg class="w-5 h-5 group-hover:rotate-90 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+    </svg>
+  </a>
+</div>
+
+    </div>
+
+    <!-- Social proof -->
+    <div class="mt-16">
+      <p class="text-sm font-medium text-yellow-900/80 mb-4">CONFIADO POR MAIS DE 50 CLIENTES</p>
+      <div class="avatars flex justify-center items-center space-x-1">
+        <!-- Avatares (exemplo) -->
+        <img class="avatar w-10 h-10 rounded-full ring-2 ring-yellow-700" src="https://randomuser.me/api/portraits/women/1.jpg" alt="Cliente 1">
+        <img class="avatar w-10 h-10 rounded-full ring-2 ring-yellow-700 -ml-2" src="https://randomuser.me/api/portraits/men/2.jpg" alt="Cliente 2">
+        <img class="avatar w-10 h-10 rounded-full ring-2 ring-yellow-700 -ml-2" src="https://randomuser.me/api/portraits/women/3.jpg" alt="Cliente 3">
+        <img class="avatar w-10 h-10 rounded-full ring-2 ring-yellow-700 -ml-2" src="https://randomuser.me/api/portraits/men/4.jpg" alt="Cliente 4">
+        <img class="avatar w-10 h-10 rounded-full ring-2 ring-yellow-700 -ml-2" src="https://randomuser.me/api/portraits/women/5.jpg" alt="Cliente 5">
+      </div>
+    </div>
+  </div>
+</section>
+  
+
+<!-- Sobre - Versão Profissional -->
+<section id="sobre" class="relative py-24 bg-gray-50 overflow-hidden">
+  <!-- Elementos decorativos de fundo -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-0 left-20 w-32 h-32 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl"></div>
+    <div class="absolute bottom-0 right-20 w-40 h-40 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl"></div>
+  </div>
+  
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col lg:flex-row items-center gap-12">
+      <!-- Foto de perfil + elementos visuais -->
+      <div class="relative lg:w-1/3 animate-fade-in-left">
+        <div class="relative z-10 w-64 h-64 mx-auto rounded-2xl overflow-hidden shadow-xl border-4 border-white">
+          <img 
+          src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+            alt="David Ribeiro trabalhando" 
+            class="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+        <div class="absolute -bottom-6 -right-6 bg-yellow-500 w-32 h-32 rounded-2xl shadow-lg"></div>
+      </div>
+      
+      <!-- Texto sobre -->
+      <div class="lg:w-2/3 text-center lg:text-left animate-fade-in-right">
+        <div class="inline-flex items-center bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full mb-6">
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-sm font-semibold">ESPECIALISTA EM CONVERSÃO</span>
+        </div>
+        
+        <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+          <span class="block">David Ribeiro</span>
+          <span class="text-yellow-500">Desenvolvedor de Alta Performance</span>
+        </h2>
+        
+        <div class="prose prose-lg text-gray-700 max-w-3xl mx-auto lg:mx-0 mb-8">
+          <p class="leading-relaxed">
+            Com mais de <strong>5 anos de experiência</strong> em desenvolvimento front-end, crio landing pages que não apenas impressionam visualmente, mas <strong>convertem visitantes em clientes</strong>. Minha abordagem combina:
+          </p>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-left mt-4">
+            <li class="flex items-start">
+              <svg class="flex-shrink-0 w-5 h-5 text-yellow-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Design <strong>orientado a conversão</strong></span>
+            </li>
+            <li class="flex items-start">
+              <svg class="flex-shrink-0 w-5 h-5 text-yellow-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Performance <strong>ultra-rápida</strong></span>
+            </li>
+            <li class="flex items-start">
+              <svg class="flex-shrink-0 w-5 h-5 text-yellow-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Código <strong>semântico e limpo</strong></span>
+            </li>
+            <li class="flex items-start">
+              <svg class="flex-shrink-0 w-5 h-5 text-yellow-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Integração com <strong>ferramentas de marketing</strong></span>
+            </li>
+          </ul>
+        </div>
+        
+      <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+  <a href="#portfolio" 
+     class="portfolio-link px-8 py-3.5 bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white font-semibold rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center transform hover:-translate-y-1"
+     onclick="smoothScrollToPortfolio()">
+    Ver Projetos
+    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+    </svg>
+  </a>
+          <a href="#contato" 
+     class="contact-link px-8 py-3.5 bg-white hover:bg-gray-50 text-gray-800 font-semibold border border-gray-200 rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center transform hover:-translate-y-1"
+     onclick="smoothScrollToContact()">
+    Fale Comigo
+    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+    </svg>
+  </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+  
+  <!-- Serviços -->
+  <section id="servicos" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Cabeçalho melhorado -->
+      <div class="text-center mb-16">
+        <span class="inline-block bg-yellow-100 text-yellow-800 text-sm font-semibold px-4 py-2 rounded-full mb-4 animate-fade-in-down">
+          SOLUÇÕES ESPECIALIZADAS
+        </span>
+        <h3 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 animate-fade-in-down">
+          Serviços <span class="text-yellow-500">Premium</span>
+        </h3>
+        <p class="max-w-3xl mx-auto text-lg text-gray-600 animate-fade-in-down">
+          Desenvolvimento estratégico focado em conversão e performance
+        </p>
+      </div>
+  
+      <!-- Grid de serviços aprimorado -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 - Landing Page -->
+        <div class="bg-gradient-to-b from-white to-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-yellow-200 animate-fade-in-up">
+          <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h4 class="text-2xl font-bold text-center mb-4">Landing Page Premium</h4>
+          <p class="text-gray-600 mb-6 text-center">
+            Páginas otimizadas para conversão com design responsivo que se adapta perfeitamente a qualquer dispositivo.
+          </p>
+          <ul class="space-y-3 text-left">
+            <li class="flex items-start">
+              <svg class="flex-shrink-0 w-5 h-5 text-yellow-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>100% responsivo (mobile, tablet, desktop)</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="flex-shrink-0 w-5 h-5 text-yellow-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Carregamento ultra-rápido</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="flex-shrink-0 w-5 h-5 text-yellow-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Integração com ferramentas de marketing</span>
+            </li>
+          </ul>
+        </div>
+  
+        <!-- Card 2 - Design -->
+        <div class="bg-gradient-to-b from-white to-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-yellow-200 animate-fade-in-up delay-100">
+          <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+            </svg>
+          </div>
+          <h4 class="text-2xl font-bold text-center mb-4">Design Estratégico</h4>
+          <p class="text-gray-600 mb-6 text-center">
+            Criação visual que combina estética e funcionalidade para maximizar a conversão.
+          </p>
+          <ul class="space-y-3 text-left">
+            <li class="flex items-start">
+              <svg class="flex-shrink-0 w-5 h-5 text-yellow-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>UI/UX otimizado para conversão</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="flex-shrink-0 w-5 h-5 text-yellow-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Identidade visual consistente</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="flex-shrink-0 w-5 h-5 text-yellow-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Protótipo interativo antes do desenvolvimento</span>
+            </li>
+          </ul>
+        </div>
+  
+        <!-- Card 3 - Entrega -->
+        <div class="bg-gradient-to-b from-white to-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-yellow-200 animate-fade-in-up delay-200">
+          <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h4 class="text-2xl font-bold text-center mb-4">Processo Ágil</h4>
+          <p class="text-gray-600 mb-6 text-center">
+            Metodologia eficiente que entrega resultados rápidos sem comprometer a qualidade.
+          </p>
+          <ul class="space-y-3 text-left">
+            <li class="flex items-start">
+              <svg class="flex-shrink-0 w-5 h-5 text-yellow-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Entrega em até 7 dias úteis</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="flex-shrink-0 w-5 h-5 text-yellow-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Atualizações e revisões inclusas</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="flex-shrink-0 w-5 h-5 text-yellow-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Suporte pós-entrega por 30 dias</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- CTA adicional -->
+      <div class="text-center mt-16 animate-fade-in-up delay-300">
+        <a href="#contato" class="inline-flex items-center px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-full transition-all shadow-lg hover:shadow-xl">
+          Quero um projeto personalizado
+          <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Portfólio -->
+<!-- Portfólio -->
+<section id="portfolio" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Cabeçalho melhorado -->
+    <div class="text-center mb-16">
+      <span class="inline-block bg-yellow-100 text-yellow-800 text-sm font-semibold px-4 py-2 rounded-full mb-4 animate-fade-in-down">
+        TRABALHOS RECENTES
+      </span>
+      <h3 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 animate-fade-in-down">
+        Meus <span class="text-yellow-500">Projetos</span>
+      </h3>
+      <p class="max-w-3xl mx-auto text-lg text-gray-600 animate-fade-in-down">
+        Landing pages estratégicas que geram resultados reais para meus clientes
+      </p>
+    </div>
+
+    <!-- Grid de projetos -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Projeto 1 -->
+<div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 animate-fade-in-up">
+  <div class="relative h-64 overflow-hidden">
+    <img 
+      src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+      alt="Dashboard de Performance de Marketing Digital"
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      loading="lazy"
+    >
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+      <a 
+        href="https://davidribeiro777.github.io/marketingnew/" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center px-4 py-2 bg-white text-gray-900 font-medium rounded-full hover:bg-blue-500 hover:text-white transition-all"
+      >
+        Ver Case Completo
+        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="p-6">
+    <div class="flex justify-between items-start mb-2">
+      <h4 class="text-xl font-bold text-gray-900">Impulso Digital</h4>
+      <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded-full">+50% Clientes</span>
+    </div>
+    <p class="text-gray-600 mb-4">Plataforma integrada de gestão de campanhas digitais</p>
+    <div class="flex flex-wrap gap-2">
+      <span class="text-xs font-medium px-2 py-1 bg-gray-100 text-gray-800 rounded-full">Google Ads</span>
+      <span class="text-xs font-medium px-2 py-1 bg-gray-100 text-gray-800 rounded-full">Meta Ads</span>
+      <span class="text-xs font-medium px-2 py-1 bg-gray-100 text-gray-800 rounded-full"></span>
+    </div>
+  </div>
+</div>
+
+     <!-- Projeto - Catálogo de Moda -->
+<div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 animate-fade-in-up">
+  <div class="relative h-64 overflow-hidden">
+    <img 
+      src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+      alt="Catálogo Digital de Coleção de Moda Outono/Inverno"
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      loading="lazy"
+    >
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+      <a 
+        href="https://davidribeiro777.github.io/catalogonew/" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center px-4 py-2 bg-white text-gray-900 font-medium rounded-full hover:bg-pink-500 hover:text-white transition-all"
+      >
+        Ver Coleção
+        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="p-6">
+    <div class="flex justify-between items-start mb-2">
+      <h4 class="text-xl font-bold text-gray-900">Coleção Outono/Inverno</h4>
+      <span class="inline-block bg-pink-100 text-pink-800 text-xs font-semibold px-2 py-1 rounded-full">Novo Lançamento</span>
+    </div>
+    <p class="text-gray-600 mb-4">Catálogo digital interativo com a coleção completa de looks casuais e elegantes para a temporada</p>
+    <div class="flex flex-wrap gap-2">
+      <span class="text-xs font-medium px-2 py-1 bg-gray-100 text-gray-800 rounded-full">Moda Sustentável</span>
+      <span class="text-xs font-medium px-2 py-1 bg-gray-100 text-gray-800 rounded-full">Filtros Inteligentes</span>
+    </div>
+  </div>
+</div>
+
+    <!-- Projeto 3 -->
+<!-- Projeto 3 - Site de Fotografia -->
+<div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 animate-fade-in-up">
+  <div class="relative h-64 overflow-hidden">
+<img 
+src="https://images.unsplash.com/photo-1554080353-321e452ccf19?ixlib=rb-4.0.3&w=600&q=80"
+  alt="Fotógrafo profissional trabalhando"
+  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+  loading="lazy"
+>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+      <a 
+        href="https://davidribeiro777.github.io/fotografo/" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center px-4 py-2 bg-white text-gray-900 font-medium rounded-full hover:bg-purple-500 hover:text-white transition-all"
+      >
+        Ver Portfólio
+        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="p-6">
+    <div class="flex justify-between items-start mb-2">
+      <h4 class="text-xl font-bold text-gray-900">Projeto Fotográfico</h4>
+      <span class="inline-block bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded-full">Novo Projeto</span>
+    </div>
+    <p class="text-gray-600 mb-4">Portfólio de fotografia artística e moderna, capturando momentos únicos.</p>
+    <div class="flex flex-wrap gap-2">
+      <span class="text-xs font-medium px-2 py-1 bg-gray-100 text-gray-800 rounded-full">Retratos Criativos</span>
+      <span class="text-xs font-medium px-2 py-1 bg-gray-100 text-gray-800 rounded-full">Estilo Moderno</span>
+      <span class="text-xs font-medium px-2 py-1 bg-gray-100 text-gray-800 rounded-full">Edição Profissional</span>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+<!-- Container full width e altura mínima para visualização -->
+<div style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center; margin-top: 4rem;">
+  <a href="#contato" style="display: inline-flex; align-items: center; padding: 1rem 2rem; background-color: #111827; color: white; font-weight: 600; border-radius: 9999px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); text-decoration: none; transition: background-color 0.3s ease;">
+    Quero um projeto como esses
+    <svg style="margin-left: 0.5rem; width: 1rem; height: 1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+    </svg>
+  </a>
+</div>
+
+
+  </div>
+</section>
+  
+<!-- Contato -->
+<section id="contato" class="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+  <!-- Elementos decorativos de fundo -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-20 left-20 w-32 h-32 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
+    <div class="absolute bottom-10 right-20 w-40 h-40 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl animate-float-delay"></div>
+  </div>
+  
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+    <!-- Cabeçalho aprimorado -->
+    <div class="text-center mb-16">
+      <span class="inline-block bg-yellow-100 text-yellow-800 text-sm font-semibold px-4 py-2 rounded-full mb-4 animate-fade-in-down tracking-wider">
+        PRONTO PARA TRANSFORMAR SEU PROJETO?
+      </span>
+      <h3 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 animate-fade-in-down">
+        Vamos <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-300">Criar Juntos</span>
+      </h3>
+      <p class="max-w-2xl mx-auto text-lg text-gray-600 animate-fade-in-down leading-relaxed">
+        Entre em contato agora mesmo e receba uma resposta personalizada em até <span class="font-semibold text-yellow-600">24 horas</span>.
+      </p>
+    </div>
+
+    <!-- Grid de Contato modernizado -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <!-- WhatsApp - Card com Font Awesome -->
+<!-- Adicione isto no <head> do seu HTML -->
+
+<!-- Card do WhatsApp corrigido -->
+<div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-yellow-200 animate-fade-in-up group relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+  <div class="relative z-10">
+    <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6 mx-auto shadow-inner group-hover:bg-green-50 transition-colors duration-300">
+      <i class="fab fa-whatsapp text-green-600 text-3xl group-hover:text-green-700 transition-colors duration-300" aria-hidden="true"></i>
+    </div>
+    <h4 class="text-xl font-bold text-center text-gray-900 mb-3">WhatsApp</h4>
+    <p class="text-gray-600 text-center mb-6">Atendimento rápido e direto</p>
+    <a href="https://wa.me/5519994772654" target="_blank" rel="noopener noreferrer" class="block w-full py-3 px-6 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium rounded-full transition-all shadow-md hover:shadow-lg text-center transform hover:-translate-y-1">
+      Enviar Mensagem
+    </a>
+  </div>
+</div>
+
+      <!-- Email - Card aprimorado -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-yellow-200 animate-fade-in-up delay-100 group relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 mx-auto shadow-inner">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-center text-gray-900 mb-3">Email</h4>
+          <p class="text-gray-600 text-center mb-6">Para propostas detalhadas</p>
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=davidribeirosuporte@gmail.com&su=Olá&body=Olá%20David%20%40davidribeiro" 
+   target="_blank" rel="noopener noreferrer"
+   class="block w-full py-3 px-6 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-full transition-all shadow-md hover:shadow-lg text-center transform hover:-translate-y-1">
+   Enviar Email
+</a>
+
+
+
+        </div>
+      </div>
+
+      <!-- Formulário - Card aprimorado -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-yellow-200 animate-fade-in-up delay-200 group relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-yellow-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center mb-6 mx-auto shadow-inner">
+            <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-center text-gray-900 mb-3">Formulário</h4>
+          <p class="text-gray-600 text-center mb-6">Descreva seu projeto</p>
+          <form class="space-y-4">
+            <div class="relative">
+              <input type="text" placeholder="Seu nome" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition pl-12 bg-gray-50">
+              <svg class="absolute left-3 top-3.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+              </svg>
+            </div>
+            <div class="relative">
+              <input type="email" placeholder="Seu email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition pl-12 bg-gray-50">
+              <svg class="absolute left-3 top-3.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div class="relative">
+              <textarea placeholder="Sobre seu projeto" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition pl-12 bg-gray-50"></textarea>
+              <svg class="absolute left-3 top-3.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2z"/>
+              </svg>
+            </div>
+            <button type="submit" class="w-full py-3 px-6 bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white font-medium rounded-full transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
+              Enviar Proposta
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Redes Sociais - Seção aprimorada -->
+    <div class="max-w-md mx-auto mt-16 animate-fade-in-up delay-300">
+      <div class="relative">
+        <div class="absolute inset-0 flex items-center">
+          <div class="w-full border-t border-gray-300"></div>
+        </div>
+        <div class="relative flex justify-center">
+          <span class="px-4 bg-gray-50 text-gray-600 text-sm">Ou conecte-se pelas redes</span>
+        </div>
+      </div>
+      
+      <div class="flex justify-center space-x-6 mt-8">
+        <a href="#" class="w-12 h-12 rounded-full bg-white shadow-sm hover:shadow-md flex items-center justify-center transition-all transform hover:-translate-y-1 hover:bg-yellow-50">
+          <svg class="w-6 h-6 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+          </svg>
+        </a>
+        <a href="#" class="w-12 h-12 rounded-full bg-white shadow-sm hover:shadow-md flex items-center justify-center transition-all transform hover:-translate-y-1 hover:bg-yellow-50">
+          <svg class="w-6 h-6 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/>
+          </svg>
+        </a>
+        <a href="#" class="w-12 h-12 rounded-full bg-white shadow-sm hover:shadow-md flex items-center justify-center transition-all transform hover:-translate-y-1 hover:bg-yellow-50">
+          <svg class="w-6 h-6 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+          </svg>
+        </a>
+        <a href="#" class="w-12 h-12 rounded-full bg-white shadow-sm hover:shadow-md flex items-center justify-center transition-all transform hover:-translate-y-1 hover:bg-yellow-50">
+          <svg class="w-6 h-6 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-gray-900 text-white py-10"> <div class="max-w-6xl mx-auto px-4 text-center">
+
+  <div class="mb-4">
+    <h3 class="text-xl font-semibold tracking-wide">David Ribeiro</h3>
+    <p class="text-sm text-gray-400 font-light">Landing Pages Modernas & Eficientes</p>
+  </div>
+
+ 
+  <p class="text-sm text-gray-500">&copy; <span id="ano-atual"></span> David Ribeiro. Todos os direitos reservados.</p>
+  
+ 
+
+</div>
+</footer>
+  
+
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const btnMenu = document.getElementById('btn-mobile-menu');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+
+    // Função para abrir/fechar menu
+    function toggleMenu() {
+        const isExpanded = btnMenu.getAttribute('aria-expanded') === 'true';
+        
+        // Alternar visibilidade do menu
+        dropdownMenu.classList.toggle('hidden');
+        
+        // Alternar ícones
+        iconMenu.classList.toggle('hidden');
+        iconClose.classList.toggle('hidden');
+        
+        // Atualizar atributo ARIA
+        btnMenu.setAttribute('aria-expanded', !isExpanded);
+        
+        // Controlar scroll do body
+        document.body.style.overflow = isExpanded ? '' : 'hidden';
+    }
+
+    // Evento de clique no botão
+    btnMenu.addEventListener('click', toggleMenu);
+
+    // Fechar menu ao clicar nos links
+    dropdownMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth < 768) { // Só fecha se for mobile
+                dropdownMenu.classList.add('hidden');
+                iconMenu.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btnMenu.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+
+    // Fechar menu ao redimensionar para desktop
+    function handleResize() {
+        if (window.innerWidth >= 768) {
+            dropdownMenu.classList.add('hidden');
+            iconMenu.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+            btnMenu.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+    }
+
+    window.addEventListener('resize', handleResize);
+});
+
+
+    // Função que adiciona a animação no clique e scroll suave para links internos
+  function adicionarAnimacaoClique(element) {
+  element.addEventListener('click', (event) => {
+    event.preventDefault(); // Impede o comportamento padrão de clique
+
+    element.classList.add('animate-click');
+    
+
+    setTimeout(() => {
+      element.classList.remove('animate-click');
+
+      const href = element.getAttribute('href');
+
+      if (href.startsWith('#')) {
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        window.location.href = href;
+      }
+    }, 200); // Tempo da animação antes da ação
+  });
+}
+
+
+    // Adicionar animação em todos os links que tem href (menu, botões, etc)
+document.querySelectorAll('a[href]').forEach(adicionarAnimacaoClique);
+
+   
+  document.getElementById("ano-atual").textContent = new Date().getFullYear();
+
+  // Animações de entrada com atraso gradual
+
+  </script>
+
+</body>
+</html>
