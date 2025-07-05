@@ -1,0 +1,109 @@
+body { 
+    font-family: 'Inter', sans-serif; 
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  }
+  
+  @keyframes float-delay {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(25px) rotate(-2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  }
+  
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .animate-float-delay {
+    animation: float-delay 10s ease-in-out infinite;
+  }
+  
+  .animate-fade-in-down {
+    animation: fade-in-down 0.8s ease-out both;
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out both;
+  }
+  
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+  
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+  
+  @keyframes fade-in-down {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Additional styles for elements */
+  .badge {
+    backdrop-filter: blur(10px);
+  }
+  
+  .title span {
+    display: inline-block;
+  }
+  
+  .subtitle span {
+    display: inline;
+  }
+  
+  /* Portfolio item hover effects */
+  .group:hover .group-hover\:scale-105 {
+    transform: scale(1.05);
+  }
+  
+  /* Contact cards */
+  .relative .absolute {
+    transition: opacity 0.5s ease;
+  }
+  
+  /* Mobile menu transitions */
+  #dropdown-menu {
+    transition: all 0.3s ease-out;
+  }
+  
+  /* Button hover effects */
+  .transform:hover\:-translate-y-1:hover {
+    transform: translateY(-0.25rem);
+  }
+  
+  /* Social icons */
+  .w-12.h-12 {
+    transition: all 0.3s ease;
+  }
+  
+  /* Form inputs */
+  input, textarea {
+    transition: all 0.3s ease;
+  }
+  
+  input:focus, textarea:focus {
+    box-shadow: 0 0 0 2px rgba(234, 179, 8, 0.5);
+  }
+  
+  /* Logo hover effects */
+  .group:hover .group-hover\:rotate-6 {
+    transform: rotate(6deg);
+  }
+  
+  .group:hover .group-hover\:scale-110 {
+    transform: scale(1.1);
+  }
