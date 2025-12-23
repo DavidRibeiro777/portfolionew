@@ -1,107 +1,168 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu functionality
-    const btnMenu = document.getElementById('btn-mobile-menu');
-    const dropdownMenu = document.getElementById('dropdown-menu');
-    const iconMenu = document.getElementById('icon-menu');
-    const iconClose = document.getElementById('icon-close');
+// scripts.js - Versão otimizada e modular
+class PortfolioApp {
+  constructor() {
+    this.init();
+  }
 
-    // Função para abrir/fechar menu
-    function toggleMenu() {
-        const isExpanded = btnMenu.getAttribute('aria-expanded') === 'true';
-        
-        // Alternar visibilidade do menu
-        dropdownMenu.classList.toggle('hidden');
-        
-        // Alternar ícones
-        iconMenu.classList.toggle('hidden');
-        iconClose.classList.toggle('hidden');
-        
-        // Atualizar atributo ARIA
-        btnMenu.setAttribute('aria-expanded', !isExpanded);
-        
-        // Controlar scroll do body
-        document.body.style.overflow = isExpanded ? '' : 'hidden';
-    }
+  init() {
+    this.setupMobileMenu();
+    this.setupSmoothScroll();
+    this.setupCurrentYear();
+    this.setupAnimations();
+    this.setupForm();
+  }
 
-    // Evento de clique no botão
-    btnMenu.addEventListener('click', toggleMenu);
+  // Mobile Menu
+  setupMobileMenu() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
 
-    // Fechar menu ao clicar nos links
-    dropdownMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function() {
-            if (window.innerWidth < 768) { // Só fecha se for mobile
-                dropdownMenu.classList.add('hidden');
-                iconMenu.classList.remove('hidden');
-                iconClose.classList.add('hidden');
-                btnMenu.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            }
-        });
+    if (!menuToggle || !mobileMenu) return;
+
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      
+      mobileMenu.classList.toggle('hidden');
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      menuIcon.classList.toggle('fa-bars');
+      menuIcon.classList.toggle('fa-times');
+      
+      document.body.style.overflow = isExpanded ? '' : 'hidden';
     });
 
-    // Fechar menu ao redimensionar para desktop
-    function handleResize() {
-        if (window.innerWidth >= 768) {
-            dropdownMenu.classList.add('hidden');
-            iconMenu.classList.remove('hidden');
-            iconClose.classList.add('hidden');
-            btnMenu.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
+    // Fechar ao clicar em links
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+          mobileMenu.classList.add('hidden');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuIcon.classList.remove('fa-times');
+          menuIcon.classList.add('fa-bars');
+          document.body.style.overflow = '';
         }
-    }
+      });
+    });
 
-    window.addEventListener('resize', handleResize);
+    // Fechar ao redimensionar
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
+        document.body.style.overflow = '';
+      }
+    });
+  }
 
-    // Smooth scroll for internal links
+  // Smooth Scroll
+  setupSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
+      anchor.addEventListener('click', (e) => {
+        const href = anchor.getAttribute('href');
+        if (href === '#') return;
+
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (!target) return;
+
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
         });
+      });
     });
+  }
 
-    // Set current year in footer
-    document.getElementById("ano-atual").textContent = new Date().getFullYear();
-
-    // Animation helper functions
-    function animateOnScroll() {
-        const elements = document.querySelectorAll('.animate-fade-in-up, .animate-fade-in-down');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
-            
-            if (elementPosition < screenPosition) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
-        });
+  // Current Year in Footer
+  setupCurrentYear() {
+    const yearElement = document.getElementById('current-year');
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
     }
+  }
 
-    // Run animation check on load and scroll
-    window.addEventListener('load', animateOnScroll);
-    window.addEventListener('scroll', animateOnScroll);
-
-    // Smooth scroll functions for specific sections
-    window.smoothScrollToPortfolio = function() {
-        const portfolioSection = document.getElementById('portfolio');
-        if (portfolioSection) {
-            portfolioSection.scrollIntoView({ behavior: 'smooth' });
-        }
+  // Animations on Scroll
+  setupAnimations() {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
     };
 
-    window.smoothScrollToContact = function() {
-        const contactSection = document.getElementById('contato');
-        if (contactSection) {
-            contactSection.scrollIntoView({ behavior: 'smooth' });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fadeIn');
         }
-    };
+      });
+    }, observerOptions);
+
+    // Observe elements with animation classes
+    document.querySelectorAll('.service-card, .project-card, .contact-card').forEach(el => {
+      observer.observe(el);
+    });
+  }
+
+  // Form Handling
+  setupForm() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+
+      try {
+        // Simular envio (substituir por sua API)
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        submitBtn.disabled = true;
+
+        // Aqui você integraria com seu backend
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
+        form.reset();
+      } catch (error) {
+        alert('Erro ao enviar mensagem. Tente novamente.');
+      } finally {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+  }
+
+  // Lazy Loading Images
+  lazyLoadImages() {
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.classList.add('loaded');
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+
+      document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
+  }
+}
+
+// Initialize app when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  new PortfolioApp();
 });
+
+// Export for module usage if needed
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = PortfolioApp;
+}
